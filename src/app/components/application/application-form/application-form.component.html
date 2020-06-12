@@ -1,0 +1,33 @@
+<div [formGroup]="form">
+  <p *ngIf="form.controls.name as control">
+    <mat-form-field appearance="standard">
+      <mat-label>Name*</mat-label>
+      <input matInput name="name" aria-label="Name" formControlName="name" placeholder="Enter your name">
+      <mat-error *ngIf="control.touched && control.invalid">
+        <span class="error" *ngIf="control.errors.required">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="form.controls.phone as control">
+    <mat-form-field appearance="standard">
+      <mat-label>Phone*</mat-label>
+      <input matInput name="phone" aria-label="Phone" formControlName="phone" placeholder="Enter your phone">
+      <mat-hint>example: +(353) 777 77 77</mat-hint>
+      <mat-error *ngIf="control.touched && control.invalid">
+        <span class="error" *ngIf="control.errors.required">This field is mandatory.</span>
+      </mat-error>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="form.controls.email as control">
+    <mat-form-field appearance="standard">
+      <mat-label>Email*</mat-label>
+      <input matInput name="email" aria-label="Email" type="email" formControlName="email" placeholder="Enter your email">
+      <mat-error *ngIf="control.touched && control.invalid">
+        <span class="error" *ngIf="control.errors.required">This field is mandatory.</span>
+        <span class="error" *ngIf="control.errors.email">This field is invalid.</span>
+      </mat-error>
+    </mat-form-field>
+  </p>
+</div>

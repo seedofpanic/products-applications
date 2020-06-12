@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{product.title}} application form</h1>
+<div mat-dialog-content>
+  <app-application-form (formInited)="setForm($event)"></app-application-form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">No Thanks</button>
+  <button mat-button class="submit-button" (click)="submit()">Ok</button>
+</div>
